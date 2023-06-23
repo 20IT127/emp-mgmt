@@ -32,6 +32,9 @@ gem "jbuilder"
 
 gem 'devise'
 gem 'rolify'
+gem 'kaminari'
+gem "will_paginate", "~> 3.0.4", :require => nil
+gem 'cancancan'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

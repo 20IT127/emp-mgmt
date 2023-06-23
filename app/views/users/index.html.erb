@@ -4,3 +4,7 @@
     <%= link_to 'edit role',  edit_user_path(user)%>
     <br>
 <% end %>
+<%# <div class="pagination">
+  <%= paginate @users, theme: "kaminari/horizontal" %>
+<%# </div> %> 
+<%= paginate @users%>

@@ -1,26 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
 <% name = current_user.present? ? current_user.email : 'Stranger' %>
-
-<h1>Welcome, <%= name %> </h1>
+<center>
+<marquee bgcolor = "966F33" width="60%" direction="left" height="200px"behavior="alternate" scrollamount="15"> 
+ <h1>Welcome, <%= name %> </h1>   
+<br>    
+</marquee>
+</center>
 <p>
-
     <% if user_signed_in? %>
-
         Are you admin? <%= current_user.has_role? :admin %> <br>
-
             <%= current_user.roles.pluck(:name) %>
-
             <%= link_to "Signout", destroy_user_session_path, method: :delete,  data:{
-
             turbo_method: :delete,
-
             turbo_confirm: "Are you sure to want to logout"
-
         } %>
-
     <% else %>
-
-            <%= link_to "Sign In", new_user_session_path %>
-
+    <center>
+    <%= link_to "Sign In", new_user_session_path %>
+    </center>
     <% end %>
-
-    </p>
+</p>
+</center>
+</html>
