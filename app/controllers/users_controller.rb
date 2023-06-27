@@ -7,6 +7,10 @@ class UsersController < ApplicationController
         @users = User.find(params[:id])
     end
 
+    def new
+        @users = User.new
+    end
+
     def edit
         @users = User.find(params[:id])
     end
@@ -20,8 +24,12 @@ class UsersController < ApplicationController
         end
     end
 
+    def show
+        @users = User.find(params[:id])
+    end
+
     private
     def user_params
-        params.require(:user).permit({role_ids: []})
+        params.require(:user).permit(:email,:password,:name,:role_ids => [])
     end
 end

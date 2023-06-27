@@ -1,0 +1,9 @@
+<h1>New Report</h1>
+
+<%= simple_form_for @report do |form| %>
+  <%= form.input :title %>
+  <%= form.input :body, as: :text_area %>
+  <%= form.input :department %>
+
+  <%= form.button :submit, 'Create Report' %>
+<% end %>

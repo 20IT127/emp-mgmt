@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :reports
   paginates_per 3
   rolify
   # Include default devise modules. Others available are:

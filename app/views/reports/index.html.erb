@@ -1,0 +1,9 @@
+<h1>Reports</h1>
+
+<% @reports.each do |report| %>
+  <h2><%= report.title %></h2>
+  <p><%= report.body %></p>
+  <p><strong>Department:</strong> <%= report.department %></p>
+<% end %>
+
+<%= link_to 'New Report', new_report_path %>
