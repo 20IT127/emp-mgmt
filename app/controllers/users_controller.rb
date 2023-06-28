@@ -3,12 +3,22 @@ class UsersController < ApplicationController
         @users = User.all.page(params[:page]).per(params[:limit])
     end
 
+    def valid_password?(password)
+        return false if sso_enabled?
+    
+        super
+    end
+
     def show
         @users = User.find(params[:id])
     end
 
     def new
         @users = User.new
+    end
+
+    def create
+        redirect_to root_path
     end
 
     def edit
