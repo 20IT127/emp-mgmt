@@ -1,9 +1,21 @@
+<center>
 <h1>New Report</h1>
-
+<table border='5px',align='center'>
 <%= simple_form_for @report do |form| %>
-  <%= form.input :title %>
-  <%= form.input :body, as: :text_area %>
-  <%= form.input :department %>
-
-  <%= form.button :submit, 'Create Report' %>
+<tr><td>
+  <%= form.input :title %></td></tr>
+  <tr><td>
+  <%= form.input :body %></td></tr>
+  <tr><td>
+  <%= form.input :department %></td></tr>
+  <tr><td>
+  <%= form.input :user_id %></td></tr>
+  <tr><td>
+  <%= form.input :created_at%></td></tr>
+  <tr><td>
+  <%= form.input :updated_at%></td></tr>
+  <tr><td><center>
+  <%= form.button :submit, 'Create Report' %></center></td></tr>
+</table>
+</center>
 <% end %>

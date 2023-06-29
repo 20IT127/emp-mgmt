@@ -37,6 +37,7 @@ gem "will_paginate", "~> 3.0.4", :require => nil
 gem 'cancancan'
 gem 'simple_form'
 gem 'mail'
+gem 'country_select'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
