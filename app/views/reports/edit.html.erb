@@ -1,0 +1,9 @@
+<%= form_with(model: @report, action: 'update') do |form| %>
+
+    <%= form.collection_check_boxes :role_ids, Report.user_id, :id, :name, :body, :updated_at, :department %>
+    <%= @report.errors[:user_id]%>
+    <%= form.button :submit %>
+    
+    <%= link_to "Back to Report", new_report_path%>  
+
+<%end%>

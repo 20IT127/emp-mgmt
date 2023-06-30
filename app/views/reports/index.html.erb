@@ -7,8 +7,9 @@
     <th>Department</th>
     <th>Created_at</th>
     <th>Updated_at</th>
+    <th>changes</th>
 <tr>
-<% @reports.each do |report| %>
+<% @report.each do |report| %>
 <tr>
 <td> 
   <%= report.user_id%>
@@ -28,9 +29,12 @@
 <td>
   <%= report.updated_at%>
 </td>
+<td>
+  <%= link_to 'Edit Report'%>
+</td>
 </tr>
 <% end %>
 <%# <tr>
-<%= link_to 'New Report', new_report_path %>
-<%# </tr>  %>
+<%= link_to 'New Report', new_report_path%>
+</tr>   
 </center>

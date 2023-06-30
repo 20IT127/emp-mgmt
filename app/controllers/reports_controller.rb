@@ -3,9 +3,13 @@
         before_action :authenticate_user!
         
           def index
-            @reports = current_user.reports
+            @report = current_user.reports
           end
-        
+          
+          def show
+            @report = Report.find(params[:id])
+          end
+
           def new
             @report = current_user.reports.build
           end
@@ -19,7 +23,24 @@
               render :new
             end
           end
-        
+
+          def edit
+            @report = Report.find(params[:id])
+          end
+    
+          def update
+            @report = Report.find(params[:id])
+            if @reports.update(report_params)
+                redirect_to reports_url, notice: "Report is updated with New content."
+            else 
+                render :edit, status: :unprocessable_entity
+            end
+          end
+    
+          def show
+            @report = Report.find(params[:id])
+          end
+    
           private
         
           def report_params
